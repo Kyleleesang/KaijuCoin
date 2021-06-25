@@ -42,7 +42,7 @@ contract KaijuCoin is Token{
     uint256 constant private MAX_UINT256 = 2**256 - 1;
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowances;
-    uint public totalSupply = 1000000000 * 10 ** 18;
+    uint256 public totalSupply = 1000000000 * 10 ** 18;
     /*
     NOTE:
     The following variables are OPTIONAL vanities. One does not have to include them.
@@ -53,8 +53,8 @@ contract KaijuCoin is Token{
     uint8 public decimals = 18;                //How many decimals to show.
     string public symbol = "KAI";                 //An identifier: eg SBX
 
-    constructor(uint256 _initialAmount, string memory _tokenName, uint8 _decimalUnits, string  memory _tokenSymbol) {
-        balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
+    constructor(uint256 totalSupply, string memory _tokenName, uint8 _decimalUnits, string  memory _tokenSymbol) {
+        balances[msg.sender] = totalSupply;               // Give the creator all initial tokens
         name = _tokenName;                                   // Set the name for display purposes
         decimals = _decimalUnits;                            // Amount of decimals for display purposes
         symbol = _tokenSymbol;                               // Set the symbol for display purposes
